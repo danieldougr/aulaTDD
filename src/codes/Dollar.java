@@ -1,5 +1,7 @@
 package codes;
 
+import codes.Money;
+
 public class Dollar {
 
    private int amount;
@@ -14,6 +16,10 @@ public class Dollar {
    Dollar times(int multiplier) {
       return new Dollar(amount * multiplier);
    }
+
+   Money times(int multiplier)  {
+      return new Dollar(amount * multiplier);
+   }
   
   public void testMultiplication() {
      Dollar five = new Dollar(5);
@@ -22,7 +28,7 @@ public class Dollar {
      product = five.times(3);
      assertEquals(new Dollar(15), product);
    }
-   
+
    public boolean equals(Object object)  {
       Dollar dollar = (Dollar) object;
       return amount == dollar.amount;

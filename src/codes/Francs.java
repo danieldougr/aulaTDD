@@ -1,5 +1,7 @@
 package codes;
 
+import codes.Money;
+
 public class Francs {
     
    private int amount;
@@ -11,7 +13,11 @@ public class Francs {
     Franc times(int multiplier)  {      
        return new Franc(amount * multiplier);					
     }
-       
+
+    Money times(int multiplier)  {
+        return new Franc(amount * multiplier);
+     }
+
     public boolean equals(Object object) {					
        Franc franc = (Franc) object;      
        return amount == franc.amount;					
