@@ -1,13 +1,26 @@
 package codes;
 
-import codes.Money;
-
-public class Dollar {
+public class Dollar extends Money {
 
    private int amount;
 
-   Dollar(int amount) {
-      this.amount= amount;
+   private String currency;
+	
+   Dollar(int amount)  {
+      this.amount = amount;
+      currency = "USD";
+   }
+
+   Dollar(int amount, String currency)  {
+      super(amount, currency);
+   }
+	
+   Money times(int multiplier)  {
+      return Money.dollar(amount * multiplier);
+   }
+   
+   String currency() {
+      return currency;
    }
    void times(int multiplier) {
       amount= amount * multiplier;
